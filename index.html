@@ -9,13 +9,33 @@
     <script>
       
     //Generates computers output as R,P, or S randomly as a string
-    function computersOutput() {
+    function randomRPSGenerator() {
         var possibleComputerOutputs = ["R", "P", "S"];
         var computersChosenOutput = possibleComputerOutputs[Math.floor(Math.random() * possibleComputerOutputs.length)];
         return computersChosenOutput
     }
 
-        
+    //Sets the output of the random number generator function as a variable
+    var computersOutput = randomRPSGenerator()
+    //Prompts the user for an input and records it as a variable
+    var userInput = prompt("R, P, or S?")
+    //console.logs the computers output for easy debugging
+    console.log(computersOutput)
+    //Tie scenario
+    if (userInput === computersOutput) {
+        console.log("tie game")
+    } 
+    //Win scenarios
+    else if ((userInput === "R" && computersOutput === "S")) {
+        console.log("you win")
+    } else if ((userInput === "S" && computersOutput === "P")) {
+        console.log("you win")
+    } else if ((userInput === "P" && computersOutput === "R")) {
+        console.log("you win")
+    //Lose scenarios, if you didn't win you lost lol
+    } else {
+        console.log("you lose")
+    }
     </script>
 </body>
 </html>
