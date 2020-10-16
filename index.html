@@ -6,6 +6,53 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+
+    //Scoreboard
+    var wins = 0
+    var loses = 0
+    var ties = 0
+
+    //Iterates 10 times
+    for (i = 0; i < 10; i++) {
+    //Random RPS generator
+    function randomRPSGenerator() {
+        var possibleComputerOutputs = ["R", "P", "S"];
+        var computersChosenOutput = possibleComputerOutputs[Math.floor(Math.random() * possibleComputerOutputs.length)];
+        return computersChosenOutput
+    }
+
+    //Sets the output of the random number generator function as a variable
+    var computersOutput = randomRPSGenerator()
+    //Prompts the user for an input and records it as a variable
+    var userInput = prompt("R, P, or S?")
+    //Alerts the computers output
+    alert("The computer chose " + computersOutput)
+    //Tie scenario
+    if (userInput === computersOutput) {
+        alert("tie game")
+        ties++
+    } 
+    //Win scenarios
+    else if ((userInput === "R" && computersOutput === "S")) {
+        alert("you win")
+        wins++
+    } else if ((userInput === "S" && computersOutput === "P")) {
+        alert("you win")
+        wins++
+    } else if ((userInput === "P" && computersOutput === "R")) {
+        alert("you win")
+        wins++
+    //Lose scenario
+    } else {
+        alert("you lose")
+        loses++
+    }
+
+    //Alert current score before playing again
+    alert("Wins: " + wins + " Loses: " + loses + " Ties: " + ties)
+    }
+
+    </script>
 </body>
 </html>
