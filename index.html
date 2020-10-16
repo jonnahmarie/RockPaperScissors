@@ -7,8 +7,15 @@
 </head>
 <body>
     <script>
- 
+
+    //Scoreboard
+    var wins = 0
+    var loses = 0
+    var ties = 0
+
+    //Iterates 10 times
     for (i = 0; i < 10; i++) {
+    //Random RPS generator
     function randomRPSGenerator() {
         var possibleComputerOutputs = ["R", "P", "S"];
         var computersChosenOutput = possibleComputerOutputs[Math.floor(Math.random() * possibleComputerOutputs.length)];
@@ -19,23 +26,31 @@
     var computersOutput = randomRPSGenerator()
     //Prompts the user for an input and records it as a variable
     var userInput = prompt("R, P, or S?")
-    //console.logs the computers output for easy debugging
-    console.log(computersOutput)
+    //Alerts the computers output
+    alert("The computer chose " + computersOutput)
     //Tie scenario
     if (userInput === computersOutput) {
         alert("tie game")
+        ties++
     } 
     //Win scenarios
     else if ((userInput === "R" && computersOutput === "S")) {
-        console.log("you win")
+        alert("you win")
+        wins++
     } else if ((userInput === "S" && computersOutput === "P")) {
-        console.log("you win")
+        alert("you win")
+        wins++
     } else if ((userInput === "P" && computersOutput === "R")) {
-        console.log("you win")
+        alert("you win")
+        wins++
     //Lose scenario
     } else {
-        console.log("you lose")
+        alert("you lose")
+        loses++
     }
+
+    //Alert current score before playing again
+    alert("Wins: " + wins + " Loses: " + loses + " Ties: " + ties)
     }
 
     </script>
